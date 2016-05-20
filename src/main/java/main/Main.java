@@ -10,13 +10,12 @@ public class Main {
         System.out.println("Escribe todos los links que deseas evaluar... Finaliza con un \"0\"");
 
         while(true) {
-
             String url = input.nextLine();
 
             if(url.trim().contentEquals(new StringBuffer("0")))
                 break;
 
-            System.out.println(URLTools.parse_content(url));
+            System.out.println(URLTools.parse_content(url.trim()));
         }
     }
 }
