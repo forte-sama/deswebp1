@@ -12,7 +12,7 @@ public class Main {
         while(true) {
             String url = input.nextLine();
 
-            if(url.trim().contentEquals(new StringBuffer("0")))
+            if(url.trim().contentEquals("0"))
                 break;
 
             System.out.println(URLTools.parse_content(url.trim()));
