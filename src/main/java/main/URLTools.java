@@ -25,8 +25,10 @@ public class URLTools {
             Document doc = Jsoup.connect(URL.trim()).get();
 
             resp.append("Numero de lineas: " + contar_lineas(doc)        + "\n");
+
             resp.append("Parrafos:         " + doc.select("p").size()    + "\n");
             resp.append("Imagenes:         " + doc.select("img").size()  + "\n");
+
             resp.append(parse_forms(doc.select("form")));
         }
         catch (SSLHandshakeException e) {
@@ -69,7 +71,7 @@ public class URLTools {
         //iterar sobre cada formulario (for tradicional para identificar con indice cada formulario)
         for(int i=0; i<forms.size(); i++) {
             Element form = forms.get(i);
-            resp.append("Formulario #" + i + ":\n");
+            resp.append("Formulario #" + (i+1) + ":\n");
 
             //obtener elementos input de cada formulario
             Elements inputs = form.select("input");
